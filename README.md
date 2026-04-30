@@ -1,4 +1,4 @@
-# devoid
+# devoid of all noise
 
 A zero-knowledge communication infrastructure designed to facilitate secure, invite-only messaging. The system comprises a Flutter client and a Node.js server, utilizing a blind router model where the infrastructure provider has no access to the cryptographic keys required to decrypt message content. The Node.js server is hosted on a Raspberry Pi Model 4.
 
