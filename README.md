@@ -100,3 +100,7 @@ The backend is built as a lightweight, high-concurrency router using Node.js and
 *   Message Lifecycle: Messages are stored with a `delivered` flag. Once a message is pushed via WebSocket or retrieved via polling, it is marked as delivered and scheduled for deletion.
 *   Automatic Data Pruning: A cleanup job runs hourly to purge delivered messages older than 7 days, expired sessions, and old authentication challenges.
 *   Hot-Reload Hubs: Access control is managed via a `hubs.json` file that is monitored for changes every 5 seconds, allowing for real-time user partitioning without server restarts.
+
+## 6-> The codebase
+1. The application, `assets`, `lib` and  `pubspec.yaml` are flutter files and can be imported to a flutter project with sufficient permissions and setup for Android and iOS.
+2. The server, in `server.js` can be run via Node.js on a Raspberry Pi served by nginx. 
