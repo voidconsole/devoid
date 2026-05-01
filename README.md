@@ -1,10 +1,14 @@
-# devoid of all noise
 <img width="1980" height="624" alt="devoid2" src="https://github.com/user-attachments/assets/1341a4cd-315b-4818-8d95-42791c3076b0" />
 
 A zero-knowledge communication infrastructure designed to facilitate secure, invite-only messaging. The system comprises a Flutter client and a Node.js server, utilizing a blind router model where the infrastructure provider has no access to the cryptographic keys required to decrypt message content. The Node.js server is hosted on a Raspberry Pi Model 4.
 
+---
+**It uses no third-party service or provider what-so-ever. Everything here is built from scratch, using the free technologies that the internet provides us with (Except for the server, A raspberry pi running rn at my home).  Hence there are limitations as file size, message limit (cause I don't have a 2TB SD card on my Pi :) and notifications, because the big corps want to read the messages if we wish to share notifications.
+That however is against the mission.
+This means, if all the world's companies shut down, except for the internet and my server, this would still work.
+Hence the name, devoid.**
 
-
+---
 
 ## 1-> Security Model and Encryption Layers
 
