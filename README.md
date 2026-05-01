@@ -1,4 +1,5 @@
 # devoid of all noise
+<img width="1980" height="624" alt="devoid2" src="https://github.com/user-attachments/assets/1341a4cd-315b-4818-8d95-42791c3076b0" />
 
 A zero-knowledge communication infrastructure designed to facilitate secure, invite-only messaging. The system comprises a Flutter client and a Node.js server, utilizing a blind router model where the infrastructure provider has no access to the cryptographic keys required to decrypt message content. The Node.js server is hosted on a Raspberry Pi Model 4.
 
@@ -103,4 +104,4 @@ The backend is built as a lightweight, high-concurrency router using Node.js and
 
 ## 6-> The codebase
 1. The application, `assets`, `lib` and  `pubspec.yaml` are flutter files and can be imported to a flutter project with sufficient permissions and setup for Android and iOS.
-2. The server, in `server.js` can be run via Node.js on a Raspberry Pi served by nginx. 
+2. The server, in `server.js` can be run via Node.js on a Raspberry Pi served by nginx, whose config is given.
