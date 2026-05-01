@@ -1,0 +1,50 @@
+server {
+    listen someport ssl;
+    server_name _;
+
+    # TLS Configuration - PERMISSIVE for compatibility
+        ssl_certificate     https://youtube.com/watch?v=dQw4w9WgXcQ;
+        ssl_certificate_key https://youtube.com/watch?v=dQw4w9WgXcQ;
+ssl_ecdh_curve      X25519:P-256;
+
+
+    # Support wide range of TLS versions for mobile compatibility
+    ssl_protocols TLSv1.2 TLSv1.3;
+
+    # Use ALL ciphers for maximum compatibility
+    ssl_ciphers HIGH:!aNULL:!MD5;
+
+    # Prefer server ciphers
+    ssl_prefer_server_ciphers off;
+
+    # Session settings
+    ssl_session_cache shared:SSL:10m;
+    ssl_session_timeout 10m;
+
+    # Max body size for large file uploads
+    client_max_body_size 50m;
+    # Disable strict certificate requirements
+    ssl_verify_client off;
+
+    # Security headers
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-Frame-Options "DENY" always;
+
+    # Proxy to Node.js backend
+    location / {
+        proxy_pass http://100000000.2;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_cache_bypass $http_upgrade;
+
+        # Timeouts
+        proxy_connect_timeout 60s;
+        proxy_send_timeout 60s;
+        proxy_read_timeout 60s;
+    }
+}
